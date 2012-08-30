@@ -6,58 +6,60 @@ import (
 
 type DenseVector []float64
 
-func NewDenseVector(nelems int) *DenseVector {
+func New(nelems int) DenseVector {
 
-	v := make(DenseVector, nelems)
-
-	return &v
+	return make(DenseVector, nelems)
 }
 
-func (u *DenseVector) Length() int {
-	return len(*u)
+func (u DenseVector) Length() int {
+	return len(u)
 }
 
-func (u *DenseVector) Add(v Vector) {
+func (u DenseVector) At(i int) float64 {
+	return u[i]
+}
 
-	for i := range (*u) {
-		(*u)[i] += v.At(i)
+func (u DenseVector) Add(v Vector) {
+
+	for i := range u {
+		u[i] += v.At(i)
 	}
 }
 
-func (u *DenseVector) Randomize() {
+func (u DenseVector) Randomize() {
 
-	for i := range (*u) {
-		(*u)[i] = rand.Float64()
+	for i := range u {
+		u[i] = rand.Float64()
 	}
 }
 
-func (u *DenseVector) Sum() (s float64) {
+func (u DenseVector) Sum() (s float64) {
 
-	for _,e := range (*u) {
+	for _,e := range u {
 		s += e
 	}
 
 	return
 }
 
-func (u *DenseVector) Scale(s float64) {
+func (u DenseVector) Scale(s float64) {
 
-	for i := range (*u) {
-		(*u)[i] *= s
+	for i := range u {
+		u[i] *= s
 	}
 }
 
-func (u *DenseVector) Multiply(v Vector) {
+func (u DenseVector) Multiply(v Vector) {
 
-	for i := range (*u) {
-		(*u)[i] *= v.At(i)
+	for i := range u {
+		u[i] *= v.At(i)
 	}
 }
 
-func (u *DenseVector) Dot(v Vector) (s float64) {
+func (u DenseVector) Dot(v Vector) (s float64) {
 
-	for i := range (*u) {
-		s += (*u)[i] * v.At(i)
+	for i := range u {
+		s += u[i] * v.At(i)
 	}
 
 	return

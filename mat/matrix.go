@@ -14,7 +14,7 @@
 package mat
 
 type Matrix interface {
-	At(i,j int) float64
+	At(i, j int) float64
 }
 
 type Rows interface {
@@ -35,7 +35,7 @@ type ColsMatrix interface {
 	Matrix
 }
 
-type RowsColsMatrix interface{
+type RowsColsMatrix interface {
 	Matrix
 	Rows
 	Cols

@@ -16,7 +16,7 @@ func TestAdd(t *testing.T) {
 
 	a.Add(b)
 
-	if a.At(2) != old + b.At(2) {
+	if a.At(2) != old+b.At(2) {
 		t.Fatal()
 	}
 }

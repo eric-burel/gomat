@@ -26,6 +26,13 @@ func (u DenseVector) Add(v Vector) {
 	}
 }
 
+func (u DenseVector) AddDense(v DenseVector) {
+
+	for i := range u {
+		u[i] += v[i]
+	}
+}
+
 func (u DenseVector) Randomize() {
 
 	for i := range u {
@@ -35,7 +42,7 @@ func (u DenseVector) Randomize() {
 
 func (u DenseVector) Sum() (s float64) {
 
-	for _,e := range u {
+	for _, e := range u {
 		s += e
 	}
 

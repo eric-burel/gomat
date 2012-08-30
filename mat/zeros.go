@@ -5,6 +5,6 @@ type zeros struct {
 
 var ZEROS = zeros{}
 
-func (z zeros) At(i,j int) float64 {
+func (z zeros) At(i, j int) float64 {
 	return 0.0
 }

@@ -1,4 +1,3 @@
-
 package vec
 
 type Vector interface {
@@ -13,5 +12,3 @@ type LengthVector interface {
 	Length
 	Vector
 }
-
-

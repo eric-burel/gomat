@@ -14,7 +14,6 @@ func TestProduct(t *testing.T) {
 	b.Set(1,1, 6.0)
 
 	a.Product(b, c)
-	a.Product(b, ONES)
 }
 
 func TestAdd(t *testing.T) {
